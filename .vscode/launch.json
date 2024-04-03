@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "app_pokemon",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "app_pokemon (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "app_pokemon (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "commons",
+            "cwd": "package\\commons",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "commons (profile mode)",
+            "cwd": "package\\commons",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "commons (release mode)",
+            "cwd": "package\\commons",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "repositories",
+            "cwd": "package\\repositories",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "repositories (profile mode)",
+            "cwd": "package\\repositories",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "repositories (release mode)",
+            "cwd": "package\\repositories",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
