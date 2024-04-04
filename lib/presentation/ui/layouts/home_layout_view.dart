@@ -14,12 +14,17 @@ class HomeLayoutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-        create: (_) => HomeLayoutProvider()..getItemsTabs(),
-        lazy: false,
-        child: (kIsWeb)
-            ? _ViewWithBottomNavigationWeb(child)
-            : _ViewWithBottomNavigationMobile(child));
+    return LayoutBuilder(
+      builder: (_, constraints) {
+        return ChangeNotifierProvider(
+          create: (_) => HomeLayoutProvider()..getItemsTabs(),
+          lazy: false,
+          child: (kIsWeb && constraints.maxWidth > 430)
+              ? _ViewWithBottomNavigationWeb(child)
+              : _ViewWithBottomNavigationMobile(child),
+        );
+      },
+    );
   }
 }
 
@@ -60,7 +65,7 @@ class _ViewWithBottomNavigationMobile extends StatelessWidget {
 
     return (provider.items.isNotEmpty)
         ? Scaffold(
-            body: child,
+            body: SafeArea(child: child),
             bottomNavigationBar: CustomBottomNavigationBarMobile(
                 onPressed: (element) {
                   locator<NavigationService>().navigateTo(element);

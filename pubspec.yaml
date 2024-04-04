@@ -29,18 +29,21 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.6
-  fluro: ^2.0.5
-  flutter:
-    sdk: flutter
+  universal_html: ^2.2.4
   get_it: ^7.6.7
   provider: ^6.1.2
   dio: ^5.4.2+1
-  repositories:
-    path: package/repositories
+  fluro: ^2.0.5
+  flutter:
+    sdk: flutter
+
+  # Local Packages
   commons:
     path: package/commons
   lobby:
     path: package/lobby
+  repositories:
+    path: package/repositories
   search:
     path: package/search
 

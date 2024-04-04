@@ -1,10 +1,10 @@
-import 'package:commons/domain/entities/pokemon/pokemon_detail_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:search/presenters/search_presenter.dart';
 import 'package:commons/shared/cards/custom_card_pokemon.dart';
 import 'package:commons/shared/search_bar/custom_search_bar.dart';
+import 'package:commons/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class SearchView extends StatelessWidget {
   final String pokemonName;
@@ -14,7 +14,7 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => SearchPresenter()..getPokemon(pokemonName),
+      create: (_) => SearchPresenter()..getPokemon(pokemonName, false),
       lazy: false,
       child: const _ViewGridSearch(),
     );
@@ -28,30 +28,40 @@ class _ViewGridSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     final presenter = context.watch<SearchPresenter>();
 
-    return ((!presenter.isLoading))
-        ? Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: (kIsWeb) ? 720 : 20.0, vertical: 20),
-            child: Column(
-              children: [
-                const SizedBox(height: 30),
-                CustomSearchBar(onValue: (value) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: SizedBox(
+        width: (kIsWeb) ? getWidthForGrid() : double.infinity,
+        child: Column(
+          children: [
+            const SizedBox(height: 5),
+            CustomSearchBar(
+                widthOfSerach: 500,
+                onValue: (value) {
                   if (presenter.isLoading) return;
-                  presenter.getPokemon(value);
+                  presenter.getPokemon(value, true);
                 }),
-                const Spacer(),
-                (presenter.pokemon == null)
-                    ? Text(presenter.error.isEmpty
-                        ? 'Empty pokémon'
-                        : presenter.error)
-                    : _ViewPokemon(pokemon: presenter.pokemon!),
-                const Spacer(),
-              ],
-            ),
-          )
-        : const Center(
-            child: CircularProgressIndicator(),
-          );
+            const Spacer(),
+            if (!presenter.isLoading)
+              (presenter.pokemon == null)
+                  ? Text(presenter.error.isEmpty
+                      ? 'Empty pokémon'
+                      : presenter.error)
+                  : _ViewPokemon(pokemon: presenter.pokemon!),
+            if (presenter.isLoading) ...[
+              const Center(
+                child: CircularProgressIndicator(),
+              )
+            ],
+            const Spacer(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  double getWidthForGrid() {
+    return 400;
   }
 }
 

@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatelessWidget {
   final ValueChanged<String> onValue;
+  final double widthOfSerach;
 
-  const CustomSearchBar({super.key, required this.onValue});
+  const CustomSearchBar({
+    super.key,
+    required this.onValue,
+    required this.widthOfSerach,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +33,20 @@ class CustomSearchBar extends StatelessWidget {
           },
         ));
 
-    return TextFormField(
-      focusNode: focusNode,
-      controller: texController,
-      decoration: inputDecoration,
-      onFieldSubmitted: (value) {
-        focusNode.unfocus();
-        onValue(value);
-      },
-      onTapOutside: (_) {
-        focusNode.unfocus();
-      },
+    return SizedBox(
+      width: widthOfSerach,
+      child: TextFormField(
+        focusNode: focusNode,
+        controller: texController,
+        decoration: inputDecoration,
+        onFieldSubmitted: (value) {
+          focusNode.unfocus();
+          onValue(value);
+        },
+        onTapOutside: (_) {
+          focusNode.unfocus();
+        },
+      ),
     );
   }
 }
