@@ -1,4 +1,7 @@
+import 'package:app_pokenmon/router/router.dart';
+import 'package:commons/util/constans_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:app_pokenmon/helper/locator.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -42,7 +45,7 @@ class _ViewWithBottomNavigationWeb extends StatelessWidget {
             body: Column(
               children: [
                 CustomBottomNavigationBarWeb(onPressed: (element) {
-                  locator<NavigationService>().navigateTo(element);
+                  appRouter.go(element);
                 }),
                 Expanded(child: child)
               ],
@@ -67,10 +70,11 @@ class _ViewWithBottomNavigationMobile extends StatelessWidget {
         ? Scaffold(
             body: SafeArea(child: child),
             bottomNavigationBar: CustomBottomNavigationBarMobile(
-                onPressed: (element) {
-                  locator<NavigationService>().navigateTo(element);
-                },
-                itemsTabs: provider.items),
+              onPressed: (element) {
+                appRouter.go(element);
+              },
+              itemsTabs: provider.items,
+            ),
           )
         : const Center(
             child: CircularProgressIndicator(),

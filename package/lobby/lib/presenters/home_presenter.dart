@@ -19,7 +19,8 @@ class HomePresenter extends ChangeNotifier {
     notifyListeners();
     offset = limit;
     limit += 10;
-    final newPokemonList = await getAllPokemonsUseCase?.invoke(limit.toString(), offset.toString());
+    final newPokemonList = await getAllPokemonsUseCase?.invoke(
+        limit.toString(), offset.toString());
     isLoading = false;
     if (newPokemonList != null) pokemonList.addAll(newPokemonList);
     notifyListeners();
@@ -54,5 +55,4 @@ class HomePresenter extends ChangeNotifier {
       return '0';
     }
   }
-  
 }

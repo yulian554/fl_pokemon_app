@@ -8,7 +8,6 @@ import 'package:app_pokenmon/presentation/ui/layouts/home_layout_view.dart';
 
 void main() {
   setupLocator();
-  Flurorouter.configureRoutes();
 
   runApp(const MyApp());
 }
@@ -18,13 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: AppTheme(selectedColor: 2).getTheme(),
       debugShowCheckedModeBanner: false,
       title: 'App Pokenmon',
-      initialRoute: '/home',
-      onGenerateRoute: Flurorouter.router.generator,
-      navigatorKey: locator<NavigationService>().navigatorKey,
+      routerConfig: appRouter,
       builder: (_, child) {
         return Overlay(
           initialEntries: [

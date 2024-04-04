@@ -1,26 +1,25 @@
-import 'package:fluro/fluro.dart';
-import 'package:app_pokenmon/router/main_handlers.dart';
+import 'package:go_router/go_router.dart';
 import 'package:commons/util/constans_route.dart';
+import 'package:app_pokenmon/router/main_page_builder.dart';
 
-class Flurorouter {
-  static final FluroRouter router = FluroRouter();
-
-  static void configureRoutes() {
-    router.define(ConstansRouter.home,
-        handler: homeView, transitionType: TransitionType.fadeIn);
-
-    router.define(ConstansRouter.searchWithParam,
-        handler: searchView, transitionType: TransitionType.fadeIn);
-
-    router.define(ConstansRouter.search,
-        handler: searchView, transitionType: TransitionType.fadeIn);
-
-    router.define(ConstansRouter.favorites,
-        handler: favoritesView, transitionType: TransitionType.fadeIn);
-
-    router.define(ConstansRouter.profile,
-        handler: profileView, transitionType: TransitionType.fadeIn);
-
-    router.notFoundHandler = pageNotFound;
-  }
-}
+final appRouter = GoRouter(
+  initialLocation: ConstansRouter.home,
+  routes: [
+    GoRoute(
+      path: ConstansRouter.home,
+      name: 'My Home',
+      pageBuilder: (_, state) => pageHomeView(state),
+    ),
+    GoRoute(
+      path: ConstansRouter.searchWithParam,
+      name: 'My Searc whit params',
+      pageBuilder: (_, state) => pageSearchWithView(state),
+    ),
+    GoRoute(
+      path: ConstansRouter.search,
+      name: 'My Searc',
+      pageBuilder: (_, __) => pageSearchView(),
+    ),
+  ],
+  errorPageBuilder: (_, __) => pageNotFound(),
+);
