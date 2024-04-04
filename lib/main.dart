@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: AppTheme(selectedColor: 2).getTheme(),
+      theme: AppTheme(selectedColor: 3).getTheme(),
       debugShowCheckedModeBanner: false,
       title: 'App Pokenmon',
       routerConfig: appRouter,
