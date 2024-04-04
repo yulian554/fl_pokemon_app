@@ -1,11 +1,7 @@
-import 'package:app_pokenmon/router/router.dart';
-import 'package:commons/util/constans_route.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:app_pokenmon/helper/locator.dart';
+import 'package:app_pokenmon/router/router.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:app_pokenmon/service/navigation_service.dart';
 import 'package:app_pokenmon/presentation/providers/home_layout_provider.dart';
 import 'package:commons/shared/navigation_bar/custom_button_navigation_bar_web.dart';
 import 'package:commons/shared/navigation_bar/custom_button_navigation_bar_mobile.dart';
