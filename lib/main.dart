@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:app_pokenmon/router/router.dart';
+import 'package:flutter/material.dart';
 import 'package:app_pokenmon/helper/locator.dart';
 import 'package:app_pokenmon/config/theme/app_theme.dart';
-import 'package:app_pokenmon/presentation/ui/layouts/home_layout_view.dart';
 
 void main() {
   setupLocator();
@@ -10,25 +9,22 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with RouterMixin {
+  @override
   Widget build(BuildContext context) {
+    WidgetsFlutterBinding.ensureInitialized();
     return MaterialApp.router(
-      theme: AppTheme(selectedColor: 3).getTheme(),
+      theme: AppTheme(selectedColor: 1).getTheme(),
       debugShowCheckedModeBanner: false,
       title: 'App Pokenmon',
-      routerConfig: appRouter,
-      builder: (_, child) {
-        return Overlay(
-          initialEntries: [
-            OverlayEntry(
-              builder: (_) => HomeLayoutView(child: child ?? Container()),
-            )
-          ],
-        );
-      },
+      routerConfig: router,
     );
   }
 }

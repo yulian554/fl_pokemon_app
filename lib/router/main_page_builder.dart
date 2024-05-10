@@ -36,9 +36,39 @@ Page<dynamic> pageSearchView() {
   );
 }
 
-Page<dynamic> pageNotFound() {
+Page<dynamic> pageFavoritesView() {
   return CustomTransitionPage(
-    child: const View404(),
+    child: const FavoritesViewMain(),
+    transitionsBuilder: (_, animation, __, child) => FadeTransition(
+      opacity: animation,
+      child: child,
+    ),
+  );
+}
+
+Page<dynamic> pageProfileView() {
+  return CustomTransitionPage(
+    child: const ProfileViewMain(),
+    transitionsBuilder: (_, animation, __, child) => FadeTransition(
+      opacity: animation,
+      child: child,
+    ),
+  );
+}
+
+Page<dynamic> pageConfigView() {
+  return CustomTransitionPage(
+    child: const ConfigViewMain(),
+    transitionsBuilder: (_, animation, __, child) => FadeTransition(
+      opacity: animation,
+      child: child,
+    ),
+  );
+}
+
+Page<dynamic> pageNotFound(GoRouterState goRouterState) {
+  return CustomTransitionPage(
+    child: Error404ViewMain(message: goRouterState.error.toString()),
     transitionsBuilder: (_, animation, __, child) => FadeTransition(
       opacity: animation,
       child: child,

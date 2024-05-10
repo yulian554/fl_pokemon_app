@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:commons/domain/entities/pokemon/pokemon_detail_entity.dart';
-import 'package:flutter/widgets.dart';
 
 class CustomCartPokemon extends StatelessWidget {
   const CustomCartPokemon({super.key, required this.pokemon});

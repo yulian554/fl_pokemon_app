@@ -14,7 +14,8 @@ class GetAllPokemonsUseCaseImpl implements GetAllPokemonsUseCase {
   @override
   Future<List<PokemonDetailEntity>> invoke(String limit, String offset) async {
     final pokemons = await repository?.getListPokemons(limit, offset);
-    final List<String> urls = pokemons?.results.map((e) => e.url).toList() ?? [];
+    final List<String> urls =
+        pokemons?.results.map((e) => e.url).toList() ?? [];
     final newPokemonList = await _getAllPokemon(urls);
     return newPokemonList;
   }

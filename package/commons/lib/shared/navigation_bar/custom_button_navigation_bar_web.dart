@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:commons/shared/buttons/custom_flat_button.dart';
 
 class CustomBottomNavigationBarWeb extends StatelessWidget {
-
   final Function(String) onPressed;
+  final Function() goConfig;
 
   const CustomBottomNavigationBarWeb({
-    super.key, 
-    required this.onPressed
+    super.key,
+    required this.onPressed,
+    required this.goConfig,
   });
 
   @override
@@ -22,26 +23,36 @@ class CustomBottomNavigationBarWeb extends StatelessWidget {
         children: [
           CustomFlatButton(
             text: 'Home',
-            onPressed: () => onPressed(ConstansRouter.home),
+            onPressed: () => onPressed(Routes.home),
             color: colors.primary,
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Search',
-            onPressed: () => onPressed(ConstansRouter.search),
+            onPressed: () => onPressed(Routes.search),
             color: colors.primary,
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Favorites',
-            onPressed: () => onPressed(ConstansRouter.favorites),
+            onPressed: () => onPressed(Routes.favorites),
             color: colors.primary,
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Profile',
-            onPressed: () => onPressed(ConstansRouter.profile),
+            onPressed: () => onPressed(Routes.profile),
             color: colors.primary,
+          ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+                onPressed: () => goConfig(),
+                icon: Icon(
+                  Icons.settings,
+                  color: colors.primary,
+                )),
           )
         ],
       ),

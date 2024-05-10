@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:commons/util/constans_route.dart';
 
 class ProfileViewMain extends StatelessWidget {
   const ProfileViewMain({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Hello Profile',
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-      ),
-    );
+    return MaterialButton(
+        child: const Text('Go Home'),
+        onPressed: () {
+          context.goNamed(Routes.home);
+        });
   }
 }
