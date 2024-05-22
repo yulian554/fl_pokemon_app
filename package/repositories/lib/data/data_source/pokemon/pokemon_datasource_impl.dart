@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:repositories/utils/web_error.dart';
 import 'package:commons/domain/entities/pokemon/pokemons_entity.dart';
-import 'package:repositories/data/models/pokemon/pokemons_model.dart';
+import 'package:repositories/data/data_models/pokemon/pokemons_model.dart';
 import 'package:commons/domain/entities/pokemon/pokemon_detail_entity.dart';
-import 'package:repositories/data/models/pokemon/pokemon_detail_model.dart';
-import 'package:repositories/domain/datasources/pokemon/pokemon_datasource.dart';
+import 'package:repositories/data/data_models/pokemon/pokemon_detail_model.dart';
+import 'package:repositories/data/data_source/pokemon/pokemon_datasource.dart';
 
 class PokemonDatasourceImpl implements PokemonDatasource {
   final _dio = Dio();

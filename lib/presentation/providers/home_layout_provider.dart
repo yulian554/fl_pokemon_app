@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:commons/domain/entities/tabs/items_tabs_navigations.dart';
 import 'package:repositories/domain/repositories/tabs/items_tabs_repository.dart';
-import 'package:repositories/data/datasource/tabs/items_tabs_datasource_impl.dart';
+import 'package:repositories/data/data_source/tabs/items_tabs_datasource_impl.dart';
 import 'package:repositories/data/repositories/tabs/items_tabs_repository_impl.dart';
 
 class HomeLayoutProvider extends ChangeNotifier {
