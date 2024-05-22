@@ -44,6 +44,10 @@ dependencies:
   search:
     path: package/search
   universal_html: ^2.2.4
+  demo_package_fl:
+    git:
+      url: https://github.com/yulian554/demo_package_fl.git
+      ref: sprint1
 
 dev_dependencies:
   flutter_lints: ^3.0.0

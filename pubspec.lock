@@ -72,6 +72,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
+  demo_package_fl:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: sprint1
+      resolved-ref: "8b545670e016d062a8bd60454674b284d57873b4"
+      url: "https://github.com/yulian554/demo_package_fl.git"
+    source: git
+    version: "0.0.3"
   dio:
     dependency: "direct main"
     description:
@@ -346,5 +355,5 @@ packages:
     source: hosted
     version: "13.0.0"
 sdks:
-  dart: ">=3.3.0 <4.0.0"
+  dart: ">=3.3.3 <4.0.0"
   flutter: ">=3.16.0"

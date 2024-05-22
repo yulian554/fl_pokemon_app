@@ -1,7 +1,7 @@
 import 'package:repositories/shared/data/mock_items_tabs.dart';
+import 'package:repositories/data/models/tabs/items_tabs_model.dart';
 import 'package:commons/domain/entities/tabs/items_tabs_navigations.dart';
 import 'package:repositories/domain/datasources/tabs/items_tabs_datasource.dart';
-import 'package:repositories/infrastructure/models/tabs/items_tabs_model.dart';
 
 class ItemsTabsDatasourceImpl implements ItemsTabsDatasource {
   @override

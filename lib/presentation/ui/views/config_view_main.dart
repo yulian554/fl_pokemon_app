@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:js' as js;
 
+import 'package:go_router/go_router.dart';
+
 class ConfigViewMain extends StatelessWidget {
   const ConfigViewMain({super.key});
 
@@ -17,18 +19,27 @@ class ConfigViewMain extends StatelessWidget {
           leading: BackButton(
             color: colors.primary,
             onPressed: () {
-              const url = 'https://stackoverflow.com/questions/ask';
-              js.context.callMethod('open', ['$url', '_self']);
-              /*              if (context.canPop()) {
+              if (context.canPop()) {
                 context.pop();
-              } */
+              }
             },
           ),
         ),
-        body: const Center(
-          child: Text(
-            'Hello View Test',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        body: Center(
+          child: Column(
+            children: [
+              const Text(
+                'Hello View Test',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  const url = 'https://stackoverflow.com/questions/ask';
+                  js.context.callMethod('open', ['$url', '_self']);
+                },
+                child: const Text('Navigate'),
+              )
+            ],
           ),
         ));
   }

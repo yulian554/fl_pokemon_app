@@ -1,8 +1,8 @@
 import 'package:lobby/use_cases/get_all_pokemons_use_case.dart';
 import 'package:commons/domain/entities/pokemon/pokemon_detail_entity.dart';
 import 'package:repositories/domain/repositories/pokemon/pokemon_repository.dart';
-import 'package:repositories/infrastructure/datasource/pokemon/pokemon_datasource_impl.dart';
-import 'package:repositories/infrastructure/repositories/pokemon/pokemon_repository_impl.dart';
+import 'package:repositories/data/datasource/pokemon/pokemon_datasource_impl.dart';
+import 'package:repositories/data/repositories/pokemon/pokemon_repository_impl.dart';
 
 class GetAllPokemonsUseCaseImpl implements GetAllPokemonsUseCase {
   PokemonRepository? repository;
