@@ -12,8 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.1.2
-  repositories:
-    path: ../repositories
+  fl_core_pokemon:
+    git:
+      url: https://github.com/yulian554/fl_core_pokemon.git
+      ref: main
   commons:
     path: ../commons
 

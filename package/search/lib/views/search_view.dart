@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:search/presenters/search_presenter.dart';
 import 'package:commons/shared/cards/custom_card_pokemon.dart';
 import 'package:commons/shared/search_bar/custom_search_bar.dart';
-import 'package:commons/domain/entities/pokemon/pokemon_detail_entity.dart';
+import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class SearchView extends StatelessWidget {
   final String pokemonName;

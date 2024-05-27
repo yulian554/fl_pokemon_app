@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lobby/use_cases/get_all_pokemons_use_case.dart';
 import 'package:lobby/use_cases/get_all_pokemons_use_case_impl.dart';
-import 'package:commons/domain/entities/pokemon/pokemon_detail_entity.dart';
+import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class HomePresenter extends ChangeNotifier {
   int limit = 0;

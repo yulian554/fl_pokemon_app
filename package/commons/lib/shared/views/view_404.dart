@@ -21,14 +21,21 @@ class View404 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('404',
-                style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white)),
+            const Text(
+              '404',
+              style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
             const SizedBox(height: 10),
-            Text(message,
-                style: const TextStyle(fontSize: 20, color: Colors.white)),
+            Text(
+              message,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+            ),
             CustomFlatButton(
               text: 'Regresar',
               color: colors.primary,

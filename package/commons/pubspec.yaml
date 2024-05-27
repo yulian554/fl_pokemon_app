@@ -1,5 +1,6 @@
 name: commons
 description: "A new Flutter package project."
+publish_to: 'none'
 version: 0.0.1
 homepage:
 
@@ -10,6 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  fl_core_pokemon:
+    git:
+      url: https://github.com/yulian554/fl_core_pokemon.git
+      ref: main
 
 dev_dependencies:
   flutter_test:

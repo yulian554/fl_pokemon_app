@@ -39,15 +39,13 @@ dependencies:
   lobby:
     path: package/lobby
   provider: ^6.1.2
-  repositories:
-    path: package/repositories
   search:
     path: package/search
   universal_html: ^2.2.4
-  demo_package_fl:
+  fl_core_pokemon:
     git:
-      url: https://github.com/yulian554/demo_package_fl.git
-      ref: sprint1
+      url: https://github.com/yulian554/fl_core_pokemon.git
+      ref: main
 
 dev_dependencies:
   flutter_lints: ^3.0.0

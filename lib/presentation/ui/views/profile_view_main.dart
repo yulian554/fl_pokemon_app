@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:commons/util/constans_route.dart';
 import 'dart:js' as js;
 
 class ProfileViewMain extends StatelessWidget {
