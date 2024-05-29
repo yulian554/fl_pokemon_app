@@ -51,7 +51,9 @@ class _ListPokemonView extends StatelessWidget {
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               children: List.generate(presenter.pokemonList.length, (index) {
-                return CustomCartPokemon(pokemon: presenter.pokemonList[index]);
+                return CustomCartPokemon(
+                  pokemon: presenter.pokemonList[index],
+                );
               }),
             ),
           ),
