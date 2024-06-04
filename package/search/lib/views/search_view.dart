@@ -79,6 +79,7 @@ class _ViewPokemon extends StatelessWidget {
         width: 200,
         child: CustomCartPokemon(
           pokemon: pokemon,
+          isAddedToFavorites: (i) {},
         ));
   }
 }

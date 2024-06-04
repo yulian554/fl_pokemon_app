@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  bloc:
+    dependency: transitive
+    description:
+      name: bloc
+      sha256: "106842ad6569f0b60297619e9e0b1885c2fb9bf84812935490e6c5275777804e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.1.4"
   boolean_selector:
     dependency: transitive
     description:
@@ -88,20 +96,35 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  favorites:
+    dependency: "direct main"
+    description:
+      path: "package/favorites"
+      relative: true
+    source: path
+    version: "0.0.1"
   fl_core_pokemon:
     dependency: "direct main"
     description:
       path: "."
       ref: main
-      resolved-ref: "76e1d3e6653e4acc41ea8a3d961f5fadb797c264"
+      resolved-ref: b12bd2c9e4ed18db215a247debe2789938e441ff
       url: "https://github.com/yulian554/fl_core_pokemon.git"
     source: git
-    version: "0.0.4"
+    version: "0.1.0"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_bloc:
+    dependency: "direct main"
+    description:
+      name: flutter_bloc
+      sha256: f0ecf6e6eb955193ca60af2d5ca39565a86b8a142452c5b24d96fb477428f4d2
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.1.5"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -152,6 +175,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  idb_shim:
+    dependency: "direct main"
+    description:
+      name: idb_shim
+      sha256: "0566abfc41fa38889a4575f371d54860f069a7bcf6fcfdf8cf6a242e9d5e248f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1+1"
+  js:
+    dependency: transitive
+    description:
+      name: js
+      sha256: c1b2e9b5ea78c45e1a0788d29606ba27dc5f71f019f32ca5140f61ef071838cf
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.1"
   leak_tracker:
     dependency: transitive
     description:
@@ -254,6 +293,14 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  sembast:
+    dependency: transitive
+    description:
+      name: sembast
+      sha256: dbe19600cff55d43f19405be79138c3fd2c08a87b0b152b18609b9427d113a64
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.7.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -291,6 +338,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  synchronized:
+    dependency: transitive
+    description:
+      name: synchronized
+      sha256: "539ef412b170d65ecdafd780f924e5be3f60032a1128df156adad6c5b373d558"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0+1"
   term_glyph:
     dependency: transitive
     description:
@@ -347,6 +402,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.2.1"
+  web:
+    dependency: transitive
+    description:
+      name: web
+      sha256: "97da13628db363c635202ad97068d47c5b8aa555808e7a9411963c533b449b27"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.1"
 sdks:
   dart: ">=3.4.0 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"

@@ -1,8 +1,7 @@
-import 'package:get_it/get_it.dart';
 import 'package:app_pokenmon/service/navigation_service.dart';
-
-GetIt locator = GetIt.instance;
+import 'package:commons/services/locator_service.dart';
 
 void setupLocator() {
+  config();
   locator.registerLazySingleton(() => NavigationService());
 }

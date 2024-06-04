@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:favorites/presenttation/views/favorites_view.dart';
 
 class FavoritesViewMain extends StatelessWidget {
   const FavoritesViewMain({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
-
-    return Scaffold(
+    return const FavoritesView();
+    /* return Scaffold(
       body: Row(
         children: [
           Expanded(
@@ -44,6 +44,6 @@ class FavoritesViewMain extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ); */
   }
 }

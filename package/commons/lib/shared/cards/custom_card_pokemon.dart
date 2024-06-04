@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:commons/shared/buttons/favorites.dart';
 import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class CustomCartPokemon extends StatelessWidget {
   final PokemonDetailEntity pokemon;
+  final Function(bool) isAddedToFavorites;
 
   const CustomCartPokemon({
     super.key,
     required this.pokemon,
+    required this.isAddedToFavorites,
   });
 
   @override
   Widget build(BuildContext context) {
-    print("IS:: ${pokemon.name}");
     return Stack(
       children: [
         Card(
@@ -65,48 +67,12 @@ class CustomCartPokemon extends StatelessWidget {
           top: 6,
           right: 5,
           child: IconFavorites(
+            pokemon: pokemon,
+            isAddedToFavorites: (i) => {isAddedToFavorites(i)},
             isFavorite: pokemon.isFavorite,
           ),
         ),
       ],
-    );
-  }
-}
-
-class IconFavorites extends StatefulWidget {
-  final bool isFavorite;
-
-  const IconFavorites({
-    super.key,
-    required this.isFavorite,
-  });
-
-  @override
-  State<IconFavorites> createState() => _IconFavoritesState();
-}
-
-class _IconFavoritesState extends State<IconFavorites> {
-  bool isFavorite = false;
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) {
-        isFavorite = widget.isFavorite;
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        setState(() {
-          isFavorite = !isFavorite;
-        });
-      },
-      icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
     );
   }
 }

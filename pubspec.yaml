@@ -32,20 +32,24 @@ dependencies:
     path: package/commons
   cupertino_icons: ^1.0.6
   dio: ^5.4.2+1
+  favorites:
+    path: package/favorites
+  fl_core_pokemon:
+    git:
+      url: https://github.com/yulian554/fl_core_pokemon.git
+      ref: main
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.5
   get_it: ^7.6.7
   go_router: ^13.2.2
+  idb_shim: ^2.4.1+1
   lobby:
     path: package/lobby
   provider: ^6.1.2
   search:
     path: package/search
   universal_html: ^2.2.4
-  fl_core_pokemon:
-    git:
-      url: https://github.com/yulian554/fl_core_pokemon.git
-      ref: main
 
 dev_dependencies:
   flutter_lints: ^3.0.0

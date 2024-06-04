@@ -53,6 +53,13 @@ class _ListPokemonView extends StatelessWidget {
               children: List.generate(presenter.pokemonList.length, (index) {
                 return CustomCartPokemon(
                   pokemon: presenter.pokemonList[index],
+                  isAddedToFavorites: (_) {
+                    presenter.initChangeFavorites(
+                      pokemonName: presenter.pokemonList[index].name,
+                      image: presenter.pokemonList[index].sprites.frontDefault,
+                      index: index,
+                    );
+                  },
                 );
               }),
             ),
