@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:commons/helper/mixin/favorites_mixin.dart';
-import 'package:favorites/presenttation/views/bloc/favorites_event.dart';
-import 'package:favorites/presenttation/views/bloc/favorites_state.dart';
+import 'package:favorites/presentation/views/bloc/favorites_event.dart';
+import 'package:favorites/presentation/views/bloc/favorites_state.dart';
 import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState>

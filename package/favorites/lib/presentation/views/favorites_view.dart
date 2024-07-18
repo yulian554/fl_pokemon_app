@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:commons/shared/cards/custom_card_pokemon.dart';
-import 'package:favorites/presenttation/views/bloc/favorites_bloc.dart';
-import 'package:favorites/presenttation/views/bloc/favorites_event.dart';
-import 'package:favorites/presenttation/views/bloc/favorites_state.dart';
+import 'package:favorites/presentation/views/bloc/favorites_bloc.dart';
+import 'package:favorites/presentation/views/bloc/favorites_event.dart';
+import 'package:favorites/presentation/views/bloc/favorites_state.dart';
 import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class FavoritesView extends StatelessWidget {
@@ -41,7 +41,7 @@ class _BodyFavorites extends StatelessWidget {
                   child: SizedBox(
                     width: (kIsWeb) ? getWidthForGrid() : double.infinity,
                     child: pokemons.isEmpty
-                        ? Text('You hasn´t Pokemons')
+                        ? const Text('You hasn´t Pokemons')
                         : GridView.count(
                             crossAxisCount: 2,
                             mainAxisSpacing: 10,

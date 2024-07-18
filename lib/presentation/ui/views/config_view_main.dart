@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:js' as js;
-
 import 'package:go_router/go_router.dart';
 
 class ConfigViewMain extends StatelessWidget {
@@ -33,10 +31,7 @@ class ConfigViewMain extends StatelessWidget {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               MaterialButton(
-                onPressed: () {
-                  const url = 'https://stackoverflow.com/questions/ask';
-                  js.context.callMethod('open', ['$url', '_self']);
-                },
+                onPressed: () {},
                 child: const Text('Navigate'),
               )
             ],

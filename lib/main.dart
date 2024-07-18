@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app_pokenmon/router/router.dart';
-import 'package:app_pokenmon/service/locator_service.dart';
 import 'package:app_pokenmon/config/theme/app_theme.dart';
+import 'package:app_pokenmon/service/locator_service.dart';
 
 void main() async {
   setupLocator();
