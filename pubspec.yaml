@@ -37,11 +37,11 @@ dependencies:
   fl_core_pokemon:
     git:
       url: https://github.com/yulian554/fl_core_pokemon.git
-      ref: main
+      ref: test
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
-  get_it: ^7.6.7
+  get_it: ^8.0.3
   go_router: ^13.2.2
   idb_shim: ^2.4.1+1
   lobby:

@@ -16,7 +16,7 @@ dependencies:
   fl_core_pokemon:
     git:
       url: https://github.com/yulian554/fl_core_pokemon.git
-      ref: main
+      ref: test
   commons:
     path: ../commons
 

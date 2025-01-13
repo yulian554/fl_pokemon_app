@@ -6,14 +6,14 @@ import 'package:app_pokenmon/router/main_page_builder.dart';
 import 'package:app_pokenmon/presentation/ui/layouts/home_layout_view.dart';
 
 mixin RouterMixin on State<MyApp> {
-  // final rootNavigatorKey = GlobalKey<NavigatorState>();
+  final rootNavigatorKey = GlobalKey<NavigatorState>();
 
   GoRouter? _router;
 
   GoRouter get router {
     _router ??= GoRouter(
       initialLocation: Routes.homePath,
-      // navigatorKey: rootNavigatorKey,
+      navigatorKey: rootNavigatorKey,
       routes: [
         ShellRoute(
           builder: (context, state, child) {

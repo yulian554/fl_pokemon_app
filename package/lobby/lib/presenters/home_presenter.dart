@@ -6,7 +6,7 @@ import 'package:lobby/use_cases/get_all_pokemons_use_case_impl.dart';
 import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class HomePresenter extends ChangeNotifier with FavoritesMixin {
-  int limit = 0;
+  int limit = 10;
   int offset = 0;
   bool isLoading = false;
   GetAllPokemonsUseCase? getAllPokemonsUseCase;
@@ -21,8 +21,11 @@ class HomePresenter extends ChangeNotifier with FavoritesMixin {
     notifyListeners();
     offset = limit;
     limit += 10;
-    final newPokemonList =
-        await getAllPokemonsUseCase?.invoke('10', offset.toString());
+
+    final newPokemonList = await getAllPokemonsUseCase?.invoke(
+      offset: offset.toString(),
+    );
+
     isLoading = false;
     final List<PokemonDetailEntity> list = [];
     if (newPokemonList != null) {
@@ -30,7 +33,10 @@ class HomePresenter extends ChangeNotifier with FavoritesMixin {
         final bool isFavorite = await validateFavorite(item.name);
         list.add(
           PokemonDetailEntity(
-              name: item.name, sprites: item.sprites, isFavorite: isFavorite),
+            name: item.name,
+            sprites: item.sprites,
+            isFavorite: isFavorite,
+          ),
         );
       }
       pokemonList.addAll(list);
@@ -39,9 +45,7 @@ class HomePresenter extends ChangeNotifier with FavoritesMixin {
   }
 
   Future<void> loadPageSpecific(String limit, String offset) async {
-    final mLimit = getLimit(limit);
-    final mOffset = getOffset(offset);
-    final newPokemonList = await getAllPokemonsUseCase?.invoke(mLimit, mOffset);
+    final newPokemonList = await getAllPokemonsUseCase?.invoke(limit: limit, offset: offset);
     isLoading = false;
     final List<PokemonDetailEntity> list = [];
     if (newPokemonList != null) {
@@ -49,32 +53,15 @@ class HomePresenter extends ChangeNotifier with FavoritesMixin {
         final bool isFavorite = await validateFavorite(item.name);
         list.add(
           PokemonDetailEntity(
-              name: item.name, sprites: item.sprites, isFavorite: isFavorite),
+            name: item.name,
+            sprites: item.sprites,
+            isFavorite: isFavorite,
+          ),
         );
       }
       pokemonList.clear();
       pokemonList.addAll(list);
       notifyListeners();
-    }
-  }
-
-  String getLimit(String limit) {
-    if (int.tryParse(limit) != null) {
-      this.limit = int.parse(limit);
-      return limit;
-    } else {
-      this.limit = 10;
-      return '10';
-    }
-  }
-
-  String getOffset(String offset) {
-    if (int.tryParse(offset) != null) {
-      this.offset = int.parse(offset);
-      return offset;
-    } else {
-      this.offset = 0;
-      return '0';
     }
   }
 
