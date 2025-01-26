@@ -66,14 +66,13 @@ class HomePresenter extends ChangeNotifier with FavoritesMixin {
   }
 
   void initChangeFavorites({
-    required String pokemonName,
-    required String image,
+    required PokemonDetailEntity pokemonEntity,
     required int index,
   }) async {
-    await changeFavorites(pokemonName, image);
+    await changeFavorites(pokemonEntity);
     final pokemon =
-        pokemonList.firstWhere((pokemon) => pokemon.name == pokemonName);
-    final bool isFavorite = await validateFavorite(pokemonName);
+        pokemonList.firstWhere((pokemon) => pokemon.name == pokemonEntity.name);
+    final bool isFavorite = await validateFavorite(pokemon.name);
     pokemonList.update(
       index,
       PokemonDetailEntity(

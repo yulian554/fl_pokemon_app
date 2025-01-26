@@ -12,7 +12,7 @@ dependencies:
   fl_core_pokemon:
     git:
       url: https://github.com/yulian554/fl_core_pokemon.git
-      ref: test
+      ref: develop
   flutter:
     sdk: flutter
   get_it: ^8.0.3

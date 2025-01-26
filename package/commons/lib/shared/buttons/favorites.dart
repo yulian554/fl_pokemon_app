@@ -3,7 +3,7 @@ import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.da
 
 class IconFavorites extends StatelessWidget {
   final PokemonDetailEntity pokemon;
-  final Function(bool) isAddedToFavorites;
+  final Function() isAddedToFavorites;
   final bool isFavorite;
 
   const IconFavorites({
@@ -17,7 +17,7 @@ class IconFavorites extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () async {
-        isAddedToFavorites(!isFavorite);
+        isAddedToFavorites();
       },
       icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
     );

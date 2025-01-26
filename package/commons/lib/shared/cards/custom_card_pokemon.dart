@@ -4,7 +4,7 @@ import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.da
 
 class CustomCartPokemon extends StatelessWidget {
   final PokemonDetailEntity pokemon;
-  final Function(bool) isAddedToFavorites;
+  final Function() isAddedToFavorites;
 
   const CustomCartPokemon({
     super.key,
@@ -68,7 +68,7 @@ class CustomCartPokemon extends StatelessWidget {
           right: 5,
           child: IconFavorites(
             pokemon: pokemon,
-            isAddedToFavorites: (i) => {isAddedToFavorites(i)},
+            isAddedToFavorites: isAddedToFavorites,
             isFavorite: pokemon.isFavorite,
           ),
         ),

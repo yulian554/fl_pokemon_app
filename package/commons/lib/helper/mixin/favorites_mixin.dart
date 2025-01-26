@@ -7,15 +7,25 @@ mixin FavoritesMixin {
 
   Future<bool> validateFavorite(String pokemonName) async {
     final list = await _favoritesUseCase.getFavoritesPokemons();
-    final pokemon = list.where((i) {
-      return i.name == pokemonName;
-    });
+    final pokemon = list.where((i) => i.name == pokemonName);
     return pokemon.isNotEmpty;
   }
 
-  Future<void> changeFavorites(String pokemonName, String image) async {
-    await _favoritesUseCase.saveFavoritesPokemons(
-        'pokemons', pokemonName, image);
+  Future<bool> changeFavorites(PokemonDetailEntity pokemon) async {
+    final pokemons = await _favoritesUseCase.getFavoritesPokemons();
+    final pokemonResult = pokemons.firstWhere(
+      (item) => item.name == pokemon.name,
+      orElse: () => PokemonDetailEntity(
+        name: '',
+        sprites: SpritesEntity(frontDefault: ''),
+      ),
+    );
+
+    if (pokemonResult.name.isNotEmpty) {
+      return _favoritesUseCase.deleteFavoritePokemon(namePokemon: pokemonResult.name);
+    }
+
+    return await _favoritesUseCase.saveFavoritePokemon(data: pokemon);
   }
 
   Future<List<PokemonDetailEntity>> getFavoritesPokemons() {

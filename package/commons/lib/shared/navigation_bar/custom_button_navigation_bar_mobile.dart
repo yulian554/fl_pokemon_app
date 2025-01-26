@@ -6,8 +6,11 @@ class CustomBottomNavigationBarMobile extends StatefulWidget {
   final Function(String) onPressed;
   final List<ItemsTabsNavigation> itemsTabs;
 
-  const CustomBottomNavigationBarMobile(
-      {super.key, required this.onPressed, required this.itemsTabs});
+  const CustomBottomNavigationBarMobile({
+    super.key,
+    required this.onPressed,
+    required this.itemsTabs,
+  });
 
   @override
   State<CustomBottomNavigationBarMobile> createState() =>

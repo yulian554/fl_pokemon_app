@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:commons/shared/cards/custom_card_pokemon.dart';
-import 'package:favorites/presentation/views/bloc/favorites_bloc.dart';
-import 'package:favorites/presentation/views/bloc/favorites_event.dart';
-import 'package:favorites/presentation/views/bloc/favorites_state.dart';
+import 'package:favorites/presentation/bloc/favorites_bloc.dart';
+import 'package:favorites/presentation/bloc/favorites_event.dart';
+import 'package:favorites/presentation/bloc/favorites_state.dart';
 import 'package:fl_core_pokemon/domain/entities/pokemon/pokemon_detail_entity.dart';
 
 class FavoritesView extends StatelessWidget {
@@ -50,12 +50,11 @@ class _BodyFavorites extends StatelessWidget {
                               final pokemon = pokemons[index];
                               return CustomCartPokemon(
                                 pokemon: pokemon,
-                                isAddedToFavorites: (_) {
+                                isAddedToFavorites: () {
                                   bloc.add(
                                     ChangeFavorites(
                                       pokemons: pokemons,
-                                      pokemonName: pokemon.name,
-                                      image: pokemon.sprites.frontDefault,
+                                      pokemon: pokemon,
                                       index: index,
                                     ),
                                   );

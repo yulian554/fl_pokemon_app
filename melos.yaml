@@ -1,0 +1,20 @@
+name: app_pokenmon
+
+packages:
+  - package/**
+
+scripts:
+  get:
+    exec: flutter pub get
+
+  clean:
+    exec: flutter clean
+
+command:
+  bootstrap:
+    dependencies:
+      fl_core_pokemon:
+        git:
+          url: https://github.com/yulian554/fl_core_pokemon.git
+          ref: develop
+

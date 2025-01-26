@@ -6,14 +6,12 @@ final class GetFavoritesInitial extends FavoritesEvent {}
 
 final class ChangeFavorites extends FavoritesEvent {
   List<PokemonDetailEntity> pokemons;
-  String pokemonName;
-  String image;
+  PokemonDetailEntity pokemon;
   int index;
 
   ChangeFavorites({
     required this.pokemons,
-    required this.pokemonName,
-    required this.image,
+    required this.pokemon,
     required this.index,
   });
 }
