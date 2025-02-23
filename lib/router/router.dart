@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:app_pokenmon/main.dart';
+import 'package:app_pokemon/config/run_main.dart';
 import 'package:go_router/go_router.dart';
-import 'package:commons/util/constans_route.dart';
-import 'package:app_pokenmon/router/main_page_builder.dart';
-import 'package:app_pokenmon/presentation/ui/layouts/home_layout_view.dart';
+import 'package:commons/util/constants_route.dart';
+import 'package:app_pokemon/router/main_page_builder.dart';
+import 'package:app_pokemon/presentation/ui/layouts/home_layout_view.dart';
 
 mixin RouterMixin on State<MyApp> {
   final rootNavigatorKey = GlobalKey<NavigatorState>();

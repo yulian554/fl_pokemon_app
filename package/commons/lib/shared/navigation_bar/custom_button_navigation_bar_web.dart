@@ -1,4 +1,4 @@
-import 'package:commons/util/constans_route.dart';
+import 'package:commons/util/constants_route.dart';
 import 'package:flutter/material.dart';
 import 'package:commons/shared/buttons/custom_flat_button.dart';
 

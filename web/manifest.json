@@ -1,6 +1,6 @@
 {
-    "name": "app_pokenmon",
-    "short_name": "app_pokenmon",
+    "name": "app_pokemon",
+    "short_name": "app_pokemon",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

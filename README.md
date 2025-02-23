@@ -1,4 +1,4 @@
-# app_pokenmon
+# app_pokemon
 
 A new Flutter project.
 
@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Correr test de integración
+
+Para correr los test de integración se debe correr el siguiente comando en el root del proyecto:
+
+```
+$ flutter driver --target=test_driver/app.dart
+```

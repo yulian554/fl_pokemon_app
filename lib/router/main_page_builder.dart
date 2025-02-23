@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:app_pokenmon/presentation/ui/views/views.dart';
+import 'package:app_pokemon/presentation/ui/views/views.dart';
 
 Page<dynamic> pageHomeView(GoRouterState state) {
   final params = state.uri.queryParameters;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:commons/util/constans_route.dart';
-import 'package:app_pokenmon/presentation/ui/views/views.dart';
+import 'package:commons/util/constants_route.dart';
+import 'package:app_pokemon/presentation/ui/views/views.dart';
 
 class Error404ViewMain extends StatelessWidget {
   final String message;

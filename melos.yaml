@@ -1,4 +1,4 @@
-name: app_pokenmon
+name: app_pokemon
 
 packages:
   - package/**

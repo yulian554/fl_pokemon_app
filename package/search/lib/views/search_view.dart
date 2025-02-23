@@ -74,12 +74,16 @@ class _ViewPokemon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final presenter = context.watch<SearchPresenter>();
+
     return SizedBox(
         height: 200,
         width: 200,
         child: CustomCartPokemon(
           pokemon: pokemon,
-          isAddedToFavorites: (i) {},
+          isAddedToFavorites: () {
+            presenter.changeFavorites(pokemon);
+          },
         ));
   }
 }

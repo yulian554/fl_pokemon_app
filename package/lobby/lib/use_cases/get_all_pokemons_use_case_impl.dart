@@ -28,12 +28,11 @@ class GetAllPokemonsUseCaseImpl implements GetAllPokemonsUseCase {
 
   Future<List<PokemonDetailEntity>> _getAllPokemon(List<String> urls) async {
     List<PokemonDetailEntity> newPokemonList = [];
-    if (urls.isNotEmpty) {
-      for (var i = 0; i < urls.length; i++) {
-        final url = urls[i];
-        var pokemon = await _getPokemon(url);
-        if (pokemon != null) newPokemonList.add(pokemon);
-      }
+    if (urls.isEmpty) return [];
+    for (var i = 0; i < urls.length; i++) {
+      final url = urls[i];
+      var pokemon = await _getPokemon(url);
+      if (pokemon != null) newPokemonList.add(pokemon);
     }
     return newPokemonList;
   }

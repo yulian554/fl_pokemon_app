@@ -1,4 +1,4 @@
-import 'package:app_pokenmon/main_provider.dart';
+import 'package:app_pokemon/config/provider/main_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';

@@ -1,9 +1,10 @@
-import 'package:commons/util/constans_route.dart';
+import 'package:commons/test_driver_utils/test_driver_keys.dart';
+import 'package:commons/util/constants_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:app_pokenmon/presentation/providers/home_layout_provider.dart';
+import 'package:app_pokemon/presentation/providers/home_layout_provider.dart';
 import 'package:commons/shared/navigation_bar/custom_button_navigation_bar_web.dart';
 import 'package:commons/shared/navigation_bar/custom_button_navigation_bar_mobile.dart';
 
@@ -49,9 +50,7 @@ class _ViewWithBottomNavigationWeb extends StatelessWidget {
               ],
             ),
           )
-        : const Center(
-            child: CircularProgressIndicator(),
-          );
+        : const Center(child: CircularProgressIndicator());
   }
 }
 
@@ -92,8 +91,10 @@ class _ViewWithBottomNavigationMobile extends StatelessWidget {
               itemsTabs: provider.items,
             ),
           )
-        : const Center(
-            child: CircularProgressIndicator(),
+        : Center(
+            child: CircularProgressIndicator(
+              key: Key(TestDriverKeys.initialLoading.key),
+            ),
           );
   }
 }

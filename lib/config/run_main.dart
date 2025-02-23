@@ -1,10 +1,10 @@
-import 'package:app_pokenmon/main_provider.dart';
+import 'package:app_pokemon/config/provider/main_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:app_pokenmon/router/router.dart';
-import 'package:app_pokenmon/service/locator_service.dart';
+import 'package:app_pokemon/router/router.dart';
+import 'package:app_pokemon/service/locator_service.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+void runMain() async {
   setupLocator();
   runApp(const MyApp());
 }
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> with RouterMixin {
         return MaterialApp.router(
           theme: mainProvider.theme,
           debugShowCheckedModeBanner: false,
-          title: 'App Pokenmon',
+          title: 'App Pokemon',
           routerConfig: router,
         );
       },
